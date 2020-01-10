@@ -1,6 +1,6 @@
 Name:		libtranslit
 Version:	0.0.2
-Release:	4%{?dist}
+Release:	6%{?dist}
 Summary:	ASCII to Unicode transliteration library with multiple backends
 
 License:	GPLv3+
@@ -79,6 +79,12 @@ find $RPM_BUILD_ROOT -name '*.la' -exec rm -f '{}' ';'
 
 
 %changelog
+* Fri Jan 24 2014 Daniel Mach <dmach@redhat.com> - 0.0.2-6
+- Mass rebuild 2014-01-24
+
+* Fri Dec 27 2013 Daniel Mach <dmach@redhat.com> - 0.0.2-5
+- Mass rebuild 2013-12-27
+
 * Tue Jan 29 2013 Daiki Ueno <ueno@gnu.org> - 0.0.2-4
 - rebuild with new icu
 
