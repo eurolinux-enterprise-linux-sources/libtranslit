@@ -1,0 +1,27 @@
+<SECTION>
+<FILE>translit</FILE>
+
+</SECTION>
+
+<SECTION>
+<FILE>translittransliterator</FILE>
+<TITLE>TranslitTransliterator</TITLE>
+TRANSLIT_ERROR
+TranslitErrorEnum
+TranslitTransliterator
+TranslitTransliteratorClass
+translit_error_quark
+translit_implement_transliterator
+translit_transliterator_get
+translit_transliterator_transliterate
+<SUBSECTION Standard>
+TRANSLIT_IS_TRANSLITERATOR
+TRANSLIT_IS_TRANSLITERATOR_CLASS
+TRANSLIT_TRANSLITERATOR
+TRANSLIT_TRANSLITERATOR_CLASS
+TRANSLIT_TRANSLITERATOR_GET_CLASS
+TRANSLIT_TYPE_TRANSLITERATOR
+TranslitTransliteratorPrivate
+translit_transliterator_get_type
+</SECTION>
+

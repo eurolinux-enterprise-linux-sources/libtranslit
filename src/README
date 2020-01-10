@@ -1,0 +1,35 @@
+* libtranslit -- transliteration library with multiple backends
+
+Test:
+
+ $ python
+ >>> from gi.repository import Translit
+
+ >>> trans = Translit.Transliterator.get("m17n", "hi-inscript")
+ >>> trans.transliterate("a")
+ ('\xe0\xa5\x8b', 1L)			# U+094B
+ >>> trans.transliterate("b")
+ ('\xe0\xa4\xb5', 1L)			# U+0935
+ >>> trans.transliterate("d")
+ ('\xe0\xa5\x8d', 0L)			# U+094D
+ >>> trans.transliterate("dd")
+ ('\xe0\xa5\x8d\xe2\x80\x8c', 2L)	# U+094D + U+200c
+
+ >>> trans = Translit.Transliterator.get("icu", "Latin-Katakana")
+ >>> trans.transliterate("aiueo")
+ ('\xe3\x82\xa2\xe3\x82\xa4\xe3\x82\xa6\xe3\x82\xa8\xe3\x82\xaa', 5L)
+
+License:
+
+GPLv3+
+
+Copyright (C) 2012 Daiki Ueno <ueno@unixuser.org>
+Copyright (C) 2012 Red Hat, Inc.
+
+This file is free software; as a special exception the author gives
+unlimited permission to copy and/or distribute it, with or without
+modifications, as long as this notice is preserved.
+
+This file is distributed in the hope that it will be useful, but
+WITHOUT ANY WARRANTY, to the extent permitted by law; without even the
+implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.

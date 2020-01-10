@@ -1,0 +1,209 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>TranslitTransliterator</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="libtranslit Reference Manual">
+<link rel="up" href="ch01.html" title="[Insert title here]">
+<link rel="prev" href="ch01.html" title="[Insert title here]">
+<link rel="next" href="object-tree.html" title="Object Hierarchy">
+<meta name="generator" content="GTK-Doc V1.18 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="ch01.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch01.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">libtranslit Reference Manual</th>
+<td><a accesskey="n" href="object-tree.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#TranslitTransliterator.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#TranslitTransliterator.description" class="shortcut">Description</a>
+                   | 
+                  <a href="#TranslitTransliterator.object-hierarchy" class="shortcut">Object Hierarchy</a>
+                   | 
+                  <a href="#TranslitTransliterator.properties" class="shortcut">Properties</a>
+</td></tr>
+</table>
+<div class="refentry">
+<a name="TranslitTransliterator"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="TranslitTransliterator.top_of_page"></a>TranslitTransliterator</span></h2>
+<p>TranslitTransliterator</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="TranslitTransliterator.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">#define             <a class="link" href="TranslitTransliterator.html#TRANSLIT-ERROR:CAPS" title="TRANSLIT_ERROR">TRANSLIT_ERROR</a>
+enum                <a class="link" href="TranslitTransliterator.html#TranslitErrorEnum" title="enum TranslitErrorEnum">TranslitErrorEnum</a>;
+struct              <a class="link" href="TranslitTransliterator.html#TranslitTransliterator-struct" title="struct TranslitTransliterator">TranslitTransliterator</a>;
+struct              <a class="link" href="TranslitTransliterator.html#TranslitTransliteratorClass" title="struct TranslitTransliteratorClass">TranslitTransliteratorClass</a>;
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Quarks.html#GQuark"><span class="returnvalue">GQuark</span></a>              <a class="link" href="TranslitTransliterator.html#translit-error-quark" title="translit_error_quark ()">translit_error_quark</a>                (<em class="parameter"><code><span class="type">void</span></code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="TranslitTransliterator.html#translit-implement-transliterator" title="translit_implement_transliterator ()">translit_implement_transliterator</a>   (<em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *backend</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/gobject/unstable/gobject-Type-Information.html#GType"><span class="type">GType</span></a> type</code></em>);
+<a class="link" href="TranslitTransliterator.html" title="TranslitTransliterator"><span class="returnvalue">TranslitTransliterator</span></a> * <a class="link" href="TranslitTransliterator.html#translit-transliterator-get" title="translit_transliterator_get ()">translit_transliterator_get</a>    (<em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *backend</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *name</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *             <a class="link" href="TranslitTransliterator.html#translit-transliterator-transliterate" title="translit_transliterator_transliterate ()">translit_transliterator_transliterate</a>
+                                                        (<em class="parameter"><code><a class="link" href="TranslitTransliterator.html" title="TranslitTransliterator"><span class="type">TranslitTransliterator</span></a> *transliterator</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *input</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> *endpos</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);
+</pre>
+</div>
+<div class="refsect1">
+<a name="TranslitTransliterator.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  <a href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#GObject">GObject</a>
+   +----TranslitTransliterator
+</pre>
+</div>
+<div class="refsect1">
+<a name="TranslitTransliterator.properties"></a><h2>Properties</h2>
+<pre class="synopsis">
+  "<a class="link" href="TranslitTransliterator.html#TranslitTransliterator--name" title='The "name" property'>name</a>"                     <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>*                : Read / Write / Construct Only
+</pre>
+</div>
+<div class="refsect1">
+<a name="TranslitTransliterator.description"></a><h2>Description</h2>
+</div>
+<div class="refsect1">
+<a name="TranslitTransliterator.details"></a><h2>Details</h2>
+<div class="refsect2">
+<a name="TRANSLIT-ERROR:CAPS"></a><h3>TRANSLIT_ERROR</h3>
+<pre class="programlisting">#define TRANSLIT_ERROR translit_error_quark ()
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="TranslitErrorEnum"></a><h3>enum TranslitErrorEnum</h3>
+<pre class="programlisting">typedef enum {
+  TRANSLIT_ERROR_NO_SUCH_BACKEND,
+  TRANSLIT_ERROR_LOAD_FAILED,
+  TRANSLIT_ERROR_INVALID_INPUT,
+  TRANSLIT_ERROR_FAILED
+} TranslitErrorEnum;
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="TranslitTransliterator-struct"></a><h3>struct TranslitTransliterator</h3>
+<pre class="programlisting">struct TranslitTransliterator;</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="TranslitTransliteratorClass"></a><h3>struct TranslitTransliteratorClass</h3>
+<pre class="programlisting">struct TranslitTransliteratorClass {
+  gchar *(*transliterate) (TranslitTransliterator *transliterator,
+                           const gchar            *input,
+                           guint                  *endpos,
+                           GError                **error);
+};
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="translit-error-quark"></a><h3>translit_error_quark ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Quarks.html#GQuark"><span class="returnvalue">GQuark</span></a>              translit_error_quark                (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="translit-implement-transliterator"></a><h3>translit_implement_transliterator ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                translit_implement_transliterator   (<em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *backend</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/gobject/unstable/gobject-Type-Information.html#GType"><span class="type">GType</span></a> type</code></em>);</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="translit-transliterator-get"></a><h3>translit_transliterator_get ()</h3>
+<pre class="programlisting"><a class="link" href="TranslitTransliterator.html" title="TranslitTransliterator"><span class="returnvalue">TranslitTransliterator</span></a> * translit_transliterator_get    (<em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *backend</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *name</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>
+Get a transliterator instance whose name is <em class="parameter"><code>name</code></em>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>backend</code></em> :</span></p></td>
+<td>backend name (e.g. "m17n")</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>name</code></em> :</span></p></td>
+<td>name of the transliterator (e.g. "hi-inscript")</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>error</code></em> :</span></p></td>
+<td>a <a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>a <a class="link" href="TranslitTransliterator.html" title="TranslitTransliterator"><span class="type">TranslitTransliterator</span></a>. <span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="translit-transliterator-transliterate"></a><h3>translit_transliterator_transliterate ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *             translit_transliterator_transliterate
+                                                        (<em class="parameter"><code><a class="link" href="TranslitTransliterator.html" title="TranslitTransliterator"><span class="type">TranslitTransliterator</span></a> *transliterator</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *input</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> *endpos</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>transliterator</code></em> :</span></p></td>
+<td>a <a class="link" href="TranslitTransliterator.html" title="TranslitTransliterator"><span class="type">TranslitTransliterator</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>input</code></em> :</span></p></td>
+<td>an input string in UTF-8</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>endpos</code></em> :</span></p></td>
+<td>ending position of transliteration (in chars). <span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>error</code></em> :</span></p></td>
+<td>a <a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>a newly allocated output string</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<div class="refsect1">
+<a name="TranslitTransliterator.property-details"></a><h2>Property Details</h2>
+<div class="refsect2">
+<a name="TranslitTransliterator--name"></a><h3>The <code class="literal">"name"</code> property</h3>
+<pre class="programlisting">  "name"                     <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>*                : Read / Write / Construct Only</pre>
+<p>
+The transliteration which <a class="link" href="TranslitTransliterator.html" title="TranslitTransliterator"><span class="type">TranslitTransliterator</span></a> supports
+</p>
+<p>Default value: NULL</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.18</div>
+</body>
+</html>

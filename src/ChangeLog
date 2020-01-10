@@ -1,0 +1,291 @@
+commit 6377618d7de2ac2b05e802d9f08d50f81fcea2d7
+Author: Daiki Ueno <ueno@unixuser.org>
+Date:   Mon Mar 5 09:59:37 2012 +0900
+
+    Bump version to 0.0.2.
+
+ configure.ac |    2 +-
+ 1 files changed, 1 insertions(+), 1 deletions(-)
+
+commit 510865d0b52bfe2fd00dc000d628ad96a635dce3
+Author: Daiki Ueno <ueno@unixuser.org>
+Date:   Mon Mar 5 09:58:18 2012 +0900
+
+    Don't use _GET_PRIVATE for simplicity.
+
+ libtranslit/translittransliterator.c |   14 +++++++-------
+ 1 files changed, 7 insertions(+), 7 deletions(-)
+
+commit 636e4f1d0921afe3b5d7aecabc1a4c611ef166c3
+Author: Daiki Ueno <ueno@unixuser.org>
+Date:   Thu Mar 1 17:39:34 2012 +0900
+
+    m17n: handle minput_lookup output properly as m17n-edit
+
+ modules/transliteratorm17n.c |   16 ++++++++++------
+ 1 files changed, 10 insertions(+), 6 deletions(-)
+
+commit d76e91ef4e833bf6de149b3db6d61f9b380c9bfa
+Author: Daiki Ueno <ueno@unixuser.org>
+Date:   Thu Mar 1 16:57:29 2012 +0900
+
+    Bump version to 0.0.1.
+
+ configure.ac |    2 +-
+ 1 files changed, 1 insertions(+), 1 deletions(-)
+
+commit 1eb6a6f49ee10361961b1e31fe03c7c23bf45683
+Author: Daiki Ueno <ueno@unixuser.org>
+Date:   Mon Feb 27 16:07:30 2012 +0900
+
+    m17n: always fetch preedit.
+
+ modules/transliteratorm17n.c |   13 ++++++-------
+ 1 files changed, 6 insertions(+), 7 deletions(-)
+
+commit d4dab141f3c848efb75c5645685c5ca2dd902ba2
+Author: Daiki Ueno <ueno@unixuser.org>
+Date:   Fri Feb 24 11:18:11 2012 +0900
+
+    Add proper error checking in ICU module.
+
+ libtranslit/translittransliterator.h |    3 +-
+ modules/transliteratoricu.c          |   65
+ ++++++++++++++++++++++++++++++----
+ 2 files changed, 60 insertions(+), 8 deletions(-)
+
+commit f05e7954d541b232609a24d9c496ab240ff5ef3f
+Author: Daiki Ueno <ueno@unixuser.org>
+Date:   Fri Feb 24 10:47:41 2012 +0900
+
+    Check arguments of translit_transliterator_transliterate.
+
+ libtranslit/translittransliterator.c |   16 ++++++++++++++--
+ modules/transliteratoricu.c          |   14 ++++----------
+ modules/transliteratorm17n.c         |   13 +++----------
+ 3 files changed, 21 insertions(+), 22 deletions(-)
+
+commit ec9063cbaa166b89d81cf57f16a32c5b539c4dfa
+Author: Daiki Ueno <ueno@unixuser.org>
+Date:   Thu Feb 23 18:26:24 2012 +0900
+
+    Fix make distcheck.
+
+ libtranslit/Makefile.am |    1 +
+ 1 files changed, 1 insertions(+), 0 deletions(-)
+
+commit ed1ed6945c017476e0a023917b4b4de74fe8848f
+Author: Daiki Ueno <ueno@unixuser.org>
+Date:   Thu Feb 23 18:19:15 2012 +0900
+
+    Update README.
+
+ README |    2 --
+ 1 files changed, 0 insertions(+), 2 deletions(-)
+
+commit ddbd2dd3b25431d02b12a3171b8af14e07178752
+Author: Daiki Ueno <ueno@unixuser.org>
+Date:   Thu Feb 23 18:18:22 2012 +0900
+
+    Update README.
+
+ README |    2 +-
+ 1 files changed, 1 insertions(+), 1 deletions(-)
+
+commit d67a5f89ab3ac67c725c56d9d18c43333a8594c2
+Author: Daiki Ueno <ueno@unixuser.org>
+Date:   Thu Feb 23 18:16:03 2012 +0900
+
+    Add ICU module.
+
+ README                       |    5 +
+ configure.ac                 |    9 ++
+ modules/Makefile.am          |   39 +++++++--
+ modules/icumodule.c          |   30 ++++++
+ modules/transliteratoricu.c  |  201
+ ++++++++++++++++++++++++++++++++++++++++++
+ modules/transliteratoricu.h  |   26 ++++++
+ modules/transliteratorm17n.c |    1 +
+ tests/basic.c                |   22 +++++
+ 8 files changed, 325 insertions(+), 8 deletions(-)
+
+commit 2a7d86c1bc52d79e35154392c58c7c2977d5830d
+Author: Daiki Ueno <ueno@unixuser.org>
+Date:   Thu Feb 23 17:39:27 2012 +0900
+
+    Fix memleaks.
+
+ modules/transliteratorm17n.c |    2 ++
+ 1 files changed, 2 insertions(+), 0 deletions(-)
+
+commit 5b482e17549afb2ee281ad133febb7b36e1ffb66
+Author: Daiki Ueno <ueno@unixuser.org>
+Date:   Thu Feb 23 17:34:04 2012 +0900
+
+    Simplify the API inspired by ICU.
+
+ README                               |   28 +--
+ libtranslit/Makefile.am              |    6 +-
+ libtranslit/translit.h               |    3 +-
+ libtranslit/translitfilter.c         |  524
+ ----------------------------------
+ libtranslit/translitfilter.h         |   83 ------
+ libtranslit/translittransliterator.c |  449 +++++++++++++++++++++++++++++
+ libtranslit/translittransliterator.h |   84 ++++++
+ libtranslit/translittypes.h          |   51 ----
+ modules/Makefile.am                  |    4 +-
+ modules/m17nmodule.c                 |    4 +-
+ modules/transliteratorm17n.c         |  218 ++++++++++++++
+ modules/transliteratorm17n.h         |   26 ++
+ modules/translitfilterm17n.c         |  195 -------------
+ modules/translitfilterm17n.h         |   26 --
+ tests/basic.c                        |   49 ++--
+ 15 files changed, 820 insertions(+), 930 deletions(-)
+
+commit 580d2d87f9621cd10d785473865f1f41b1ddce85
+Author: Daiki Ueno <ueno@unixuser.org>
+Date:   Wed Feb 22 18:29:18 2012 +0900
+
+    Add traslit_filter_translit().
+
+    Also, changed the return value of translit_filter_filter().
+
+ README                       |   12 +++++++-----
+ libtranslit/translitfilter.c |   33 ++++++++++++++++++++++++++++++++-
+ libtranslit/translitfilter.h |    3 +++
+ modules/translitfilterm17n.c |    2 +-
+ 4 files changed, 43 insertions(+), 7 deletions(-)
+
+commit f394f14774d4f6b0faea10439654d44239c622f7
+Author: Daiki Ueno <ueno@unixuser.org>
+Date:   Wed Feb 22 15:00:57 2012 +0900
+
+    Support older glib (< 2.30).
+
+ libtranslit/translitfilter.c |    6 +++---
+ 1 files changed, 3 insertions(+), 3 deletions(-)
+
+commit 597a07f495c9dfc3d559eb6b34844f314d3d3aec
+Author: Daiki Ueno <ueno@unixuser.org>
+Date:   Wed Feb 22 13:17:03 2012 +0900
+
+    Fix memleaks.
+
+ libtranslit/translitfilter.c |    9 ++++++---
+ modules/translitfilterm17n.c |    4 +++-
+ tests/basic.c                |    3 +++
+ 3 files changed, 12 insertions(+), 4 deletions(-)
+
+commit 7ae3c98308e48780e4f3a10596bbea667a3ee6b9
+Author: Daiki Ueno <ueno@unixuser.org>
+Date:   Wed Feb 22 13:06:08 2012 +0900
+
+    Merge translitmodule.[ch] into translitfilter.c.
+
+ docs/Makefile.am             |    2 +-
+ libtranslit/Makefile.am      |    3 +-
+ libtranslit/translitfilter.c |  123
+ +++++++++++++++++++++++++++++++++++++-
+ libtranslit/translitmodule.c |  138
+ ------------------------------------------
+ libtranslit/translitmodule.h |   33 ----------
+ 5 files changed, 124 insertions(+), 175 deletions(-)
+
+commit c4bd0d4351a4f88a0caa336ea263777a395e03cc
+Author: Daiki Ueno <ueno@unixuser.org>
+Date:   Wed Feb 22 13:02:10 2012 +0900
+
+    Refine error handling.
+
+ libtranslit/translitfilter.c |   91
+ +++++++++++++++++++++++-------------------
+ libtranslit/translitfilter.h |    8 ++-
+ modules/translitfilterm17n.c |    4 +-
+ tests/basic.c                |   29 ++++++++++---
+ 4 files changed, 79 insertions(+), 53 deletions(-)
+
+commit a9e2aeb226ab0380f83c548a950a43da17da2dc6
+Author: Daiki Ueno <ueno@unixuser.org>
+Date:   Wed Feb 22 12:30:31 2012 +0900
+
+    Simplify module loading.
+
+ libtranslit/translitfilter.c |  125
+ +++++++++++++++++++++++++-----------------
+ libtranslit/translitfilter.h |    5 ++
+ modules/translitfilterm17n.c |    4 +
+ 3 files changed, 84 insertions(+), 50 deletions(-)
+
+commit 6b3b61bf7a956798328134699272b7d37f8584ca
+Author: Daiki Ueno <ueno@unixuser.org>
+Date:   Tue Feb 21 21:58:25 2012 +0900
+
+    Fix typo.
+
+ README |    2 +-
+ 1 files changed, 1 insertions(+), 1 deletions(-)
+
+commit bf778cad0772822d0021c1a39af0454e5f20ffd0
+Author: Daiki Ueno <ueno@unixuser.org>
+Date:   Tue Feb 21 18:23:56 2012 +0900
+
+    Fix crash when filter creation fails.
+
+ modules/translitfilterm17n.c |    6 ++++--
+ tests/basic.c                |    9 +++++++++
+ 2 files changed, 13 insertions(+), 2 deletions(-)
+
+commit 1297fe127f8d3d36e7cf892ed9b2d8a2654bd0cf
+Author: Daiki Ueno <ueno@unixuser.org>
+Date:   Tue Feb 21 17:28:23 2012 +0900
+
+    Build gtk-doc documentation.
+
+ Makefile.am      |    6 +++
+ configure.ac     |    3 +-
+ docs/Makefile.am |  105
+ ++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 3 files changed, 113 insertions(+), 1 deletions(-)
+
+commit 87500832d3af0f633b41eadeb280a43bddb34e5e
+Author: Daiki Ueno <ueno@unixuser.org>
+Date:   Tue Feb 21 17:21:01 2012 +0900
+
+    Always require backend/language/name triple when creating filter.
+
+ README                       |    2 +-
+ libtranslit/translitfilter.c |  154
+ +++++++++++++++++++++++++++++++++++++-----
+ libtranslit/translitfilter.h |   10 ++-
+ modules/translitfilterm17n.c |   96 +++-----------------------
+ tests/basic.c                |    2 +-
+ 5 files changed, 158 insertions(+), 106 deletions(-)
+
+commit 8fae4981f31ca2423b6887643bdba03572109183
+Author: Daiki Ueno <ueno@unixuser.org>
+Date:   Tue Feb 21 16:00:30 2012 +0900
+
+    Initial import.
+
+ COPYING                       |  674
+ +++++++++++++++++++++++++++++++++++++++++
+ Makefile.am                   |   63 ++++
+ README                        |   40 +++
+ autogen.sh                    |   25 ++
+ configure.ac                  |  104 +++++++
+ git.mk                        |  206 +++++++++++++
+ libtranslit/Makefile.am       |   78 +++++
+ libtranslit/libtranslit.pc.in |   29 ++
+ libtranslit/translit.h        |   20 ++
+ libtranslit/translitfilter.c  |  217 +++++++++++++
+ libtranslit/translitfilter.h  |   67 ++++
+ libtranslit/translitmodule.c  |  138 +++++++++
+ libtranslit/translitmodule.h  |   33 ++
+ libtranslit/translittypes.h   |   51 +++
+ modules/Makefile.am           |   50 +++
+ modules/m17nmodule.c          |   30 ++
+ modules/translitfilterm17n.c  |  259 ++++++++++++++++
+ modules/translitfilterm17n.h  |   26 ++
+ tests/Makefile.am             |   38 +++
+ tests/basic.c                 |   49 +++
+ 20 files changed, 2197 insertions(+), 0 deletions(-)

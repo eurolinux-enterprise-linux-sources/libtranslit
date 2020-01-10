@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE book PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "">
+<book xmlns="http://www.devhelp.net/book" title="libtranslit Reference Manual" link="index.html" author="" name="libtranslit" version="2" language="c">
+  <chapters>
+    <sub name="[Insert title here]" link="ch01.html">
+      <sub name="TranslitTransliterator" link="TranslitTransliterator.html"/>
+    </sub>
+    <sub name="Object Hierarchy" link="object-tree.html"/>
+    <sub name="API Index" link="api-index-full.html"/>
+    <sub name="Index of deprecated API" link="deprecated-api-index.html"/>
+    <sub name="Annotation Glossary" link="annotation-glossary.html"/>
+  </chapters>
+  <functions>
+    <keyword type="macro" name="TRANSLIT_ERROR" link="TranslitTransliterator.html#TRANSLIT-ERROR:CAPS"/>
+    <keyword type="enum" name="enum TranslitErrorEnum" link="TranslitTransliterator.html#TranslitErrorEnum"/>
+    <keyword type="struct" name="struct TranslitTransliterator" link="TranslitTransliterator.html#TranslitTransliterator-struct"/>
+    <keyword type="struct" name="struct TranslitTransliteratorClass" link="TranslitTransliterator.html#TranslitTransliteratorClass"/>
+    <keyword type="function" name="translit_error_quark ()" link="TranslitTransliterator.html#translit-error-quark"/>
+    <keyword type="function" name="translit_implement_transliterator ()" link="TranslitTransliterator.html#translit-implement-transliterator"/>
+    <keyword type="function" name="translit_transliterator_get ()" link="TranslitTransliterator.html#translit-transliterator-get"/>
+    <keyword type="function" name="translit_transliterator_transliterate ()" link="TranslitTransliterator.html#translit-transliterator-transliterate"/>
+    <keyword type="property" name="The &quot;name&quot; property" link="TranslitTransliterator.html#TranslitTransliterator--name"/>
+  </functions>
+</book>
